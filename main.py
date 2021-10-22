@@ -9,6 +9,8 @@ def cripto():
     if(request.args.get("token")):
         try:
             logger.info(f'Request data {request.args.get("token")}...')
+            #Randomic key
+            #key = Fernet.generate_key()
             key = b'V-appOSV9wyaBdpMcq4yw47CDU9FSFSl09bg8OiLAn8='
             f = Fernet(key)
             token = f.encrypt(request.args.get("token").encode())
@@ -25,6 +27,8 @@ def decode():
     if (request.args.get("token")):
         try:
             logger.info(f'Request data {request.args.get("token")}...')
+            #Randomic key
+            #key = Fernet.generate_key()
             key = b'V-appOSV9wyaBdpMcq4yw47CDU9FSFSl09bg8OiLAn8='
             f = Fernet(key)
             data = f.decrypt(request.args.get("token").encode())
